@@ -1,0 +1,96 @@
+% Xinqi Shen, shenxi24, 1003567918
+
+% start of the sentence
+S -> NP_s VP
+
+% noun as subject 
+NP_s -> NP_common | Pron_n 
+
+% noun as object
+NP_o -> NP_common | Pron_o
+
+% common noun or noun phrase
+NP_common -> NPrp | AdjP NPrp | N_new | AdjP N_new | N_new PP | N_new PP | AdjP N_new PP
+NP_common -> Det N_new | Det AdjP N_new | Det N_new PP | Det AdjP N_new PP
+N_new -> N | N N_new
+
+% recursively adverb
+AdvP -> Adv | AdvP Adv
+
+% recursively adjective 
+AdjP -> Adj | Adj AdjP
+
+% verb phrases
+VP -> VP_simple | VP_complex
+
+% prepositional phrase
+PP -> P NP_o | P Pron_o | PP PP
+
+% 3.1 Simple Sentences
+
+% verb phrases without auxiliary verbs
+VP_simple -> Vi_sp
+VP_simple -> VP_simple AdvP | AdvP VP_simple
+VP_simple -> VP_simple PP
+
+% 3.2 Auxiliary system
+
+% verb phrases with auxiliary verbs
+VP_complex -> VP_Aux
+VP_complex -> VP_Aux AdvP
+VP_complex -> VP_Aux PP | VP_Aux PP AdvP
+
+
+% intransitive verb in present participle form/progressive tense 
+% simple/past/future/conditional progressive
+% simple/past/future/conditional perfect progressive
+VP_Aux -> Aux_Vi_pg Vi_pg | Aux_Vi_pg AdvP Vi_pg | Aux_Vi_pg Vi_pg AdvP
+Aux_Vi_pg -> Aux_be_passive | Aux_have_be_pre | Aux_modal_Adv Aux_be_pres | Aux_modal_Adv Aux_have Aux_Vi_be_pre
+Aux_modal_Adv -> Aux_modal | Aux_modal AdvP
+% have/had/has been (consider Adverb in different places)
+Aux_have_be_pre -> Aux_have_pres Aux_Vi_be_pre | Aux_have_past Aux_Vi_be_pre
+Aux_Vi_be_pre -> AdvP Aux_be_past | Aux_be_past AdvP | Aux_be_past
+
+% intransitive verb in past participle form
+% simple/past/future/conditional perfect 
+VP_Aux -> Aux_Vi_pp Vi_pp | Aux_Vi_pp AdvP Vi_pp | Aux_Vi_pp Vi_pp AdvP
+Aux_Vi_pp -> Aux_have_pres | Aux_have_past | Aux_modal_Adv Aux_have
+
+% transitive verb in past participle form 
+% simple present/past/future/conditional
+% present/past/future/conditional progressive
+% present/past/future/conditional perfect
+% present/past/future/conditional perfect progressive
+VP_Aux -> Aux_Vt_pp Vt_mono_pp | Aux_Vt_pp AdvP Vt_mono_pp | Aux_Vt_pp Vt_mono_pp AdvP
+Aux_Vt_pp -> Aux_be_passive | Aux_modal_Adv Aux_be_pres | Aux_have_be_pre | Aux_have_be_pre Aux_be_prog_Adv | Aux_modal_Adv Aux_have Aux_Vt_be_Adv
+Aux_Vt_pp -> Aux_be_passive Aux_be_prog_Adv | Aux_modal_Adv Aux_be_pres Aux_be_prog_Adv | Aux_be_passive Aux_be_prog_Adv
+% consider Adverb in different places
+Aux_Vt_be_Adv -> AdvP Aux_be_past_pg | Aux_be_past_pg AdvP | Aux_be_past_pg
+Aux_be_past_pg -> Aux_be_past | Aux_be_past Aux_be_prog_Adv
+Aux_be_prog_Adv -> AdvP Aux_be_prog | Aux_be_prog
+
+% intransitive verb in base form
+% Simple conditional
+VP_Aux -> Aux_modal_Adv Vi | Aux_modal_Adv AdvP Vi | Aux_modal_Adv Vi AdvP
+
+% 3.3 Subcategorization
+
+% Monotransitive Verb + NP
+VP_simple -> V_mono_Adv NP_o
+% consider Adverb in different places
+V_mono_Adv -> Vt_mono_sp | AdvP Vt_mono_sp | Vt_mono_sp AdvP
+
+% To-infinitive
+PP -> V_to Vi | V_to Vt_mono NP_o | V_to Vt_di NP_o NP_o
+ 
+% Ditransitive Verb + NP + NP
+VP_simple -> Vt_di_Adv NP_o NP_o
+% consider Adverb in different places
+Vt_di_Adv -> Vt_di_sp | advP Vt_di_sp | Vt_di_sp advP
+
+% object clause
+VP_simple -> V_mono_Adv NP_o conj S | V_mono_Adv conj S
+
+% be verbs
+VP_simple -> V_be NP_o | V_be PP | V_be AdvP PP
+

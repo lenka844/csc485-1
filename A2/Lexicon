@@ -1,0 +1,62 @@
+% Xinqi Shen, shenxi24, 1003567918
+
+% Proper Nouns
+NPrp -> 'Nadia' | 'Ross' | 'Marseilles' | 'Google'
+
+% Nouns
+N -> 'fur' | 'cat' | 'eggplant' | 'rutabaga' | 'boat' | 'poodle' | 'autoclave' | 'cloth' | 'cheese' | 'man' | 'elephant' | 'hovercraft' | 'autopoiesis' | 'help' | 'menu' | 'shoot' | 'demand' | 'reward'
+
+% Intransitive Verb (base form, simple past, past participle and present participle/progressive tense)
+Vi -> 'demand' | 'win' | 'believe' | 'jump' | 'shoot' | 'aspire' | 'help' | 'boat' | 'leave' | 'eat' | 'arrive' | 'see' | 'want'            
+Vi_sp -> 'demanded' | 'won' | 'believed' | 'jumped' | 'shot' | 'aspired' | 'helped'| 'boated' |'left' | 'ate' | 'arrived' | 'saw' | 'wanted'                
+Vi_pp -> 'demanded' | 'won' | 'believed' | 'jumped' | 'shot' | 'aspired' | 'helped' | 'boated' | 'left' | 'eaten' | 'arrived' | 'seen' | 'wanted'                   
+Vi_pg -> 'demanding' | 'winning' | 'believing' | 'jumping' | 'shooting' | 'aspiring' | 'helping' | 'boating' | 'leaving' | 'eating' | 'arriving' | 'seeing' | 'wanting'
+
+% Monotransitive Verb (base form, simple past, past participle)
+Vt_mono -> 'reward' | 'demand' | 'find' | 'give' | 'remind' | 'want' | 'win' | 'believe' | 'jump' | 'tell' | 'bring' | 'fondle' | 'shoot' | 'leave' | 'have' | 'help' | 'eat' | 'boat' | 'see'
+Vt_mono_sp -> 'rewarded' | 'demanded' | 'found' | 'gave' | 'reminded' | 'wanted' | 'won' | 'believed' | 'jumped' | 'told' | 'brought' | 'fondled' | 'shot' | 'left' | 'had' | 'helped' | 'ate' | 'boated' | 'saw'
+Vt_mono_pp -> 'rewarded' | 'demanded' | 'found' | 'given' | 'reminded' | 'wanted' | 'won' | 'believed' | 'jumped' | 'told' | 'brought' | 'fondled' | 'shot' | 'left' | 'having' | 'helped' | 'eaten' | 'boated' | 'seen'
+
+% Ditransitive Verb (base form, simple past, past participle)
+Vt_di -> 'demand' | 'give' | 'remind' | 'tell' | 'bring' | 'reward'
+Vt_di_sp -> 'demanded' | 'gave' | 'reminded' | 'told' | 'brought' | 'rewarded'
+Vt_di_pp -> 'demanded' | 'given' | 'reminded' | 'told' | 'brought' | 'rewarded'
+
+% Auxiliary Verb in different form 
+Aux_modal -> 'can' | 'may' | 'could' | 'should' | 'might' | 'must' | 'would' | 'will'
+Aux_have_pres -> 'have' | 'has'
+Aux_have_past -> 'had'
+Aux_have -> 'have'
+
+Aux_be_passive -> 'are' | 'were' | 'is' | 'was' | 'am'
+Aux_be_past -> 'been'
+Aux_be_pres -> 'be'
+Aux_be_prog -> 'being'
+
+% Prepositions
+P -> 'with' | 'in' | 'on' | 'by' | 'after' | 'before' | 'from' | 'of' | 'to' | 'onto' | 'for'
+
+% Adverbs
+Adv -> 'immediately' | 'slowly' | 'already' | 'always' | 'really' | 'extremely' | 'often'
+
+% Adjectives
+Adj -> 'long' | 'soft' | 'tall' | 'handsome'
+
+% Determiners
+Det -> 'the' | 'a' | 'an' | 'her' | 'my' | 'your' | 'his' | 'their' | 'that'
+
+% Subject Pronouns
+Pron_n -> 'I' | 'he' | 'she' | 'it' | 'we' | 'they' | 'you'
+
+% Object pronouns
+Pron_o -> 'me' | 'him' | 'her' | 'us' | 'them' | 'you'
+
+% To-infinitive
+V_to -> 'to'
+
+% Conjunction
+conj -> 'that' | 'before' | 'after'
+
+% be verbs (Linking Verb)
+V_be -> 'are' | 'were' | 'is' | 'was' | 'am' 
+

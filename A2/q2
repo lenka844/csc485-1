@@ -1,0 +1,4 @@
+a. 8 different trees
+
+b. The parser cannot terminate, we get infinite NP branches.
+The order change can solve the issue in this example since the sentence satisfies the “Det N” first then it does not step into “NP PP” which will cause infinite NP branches. However, it is not an adequate solution in general. If some sentence does not satisfy “Det N” first, then it will still step into “NP PP”. 
